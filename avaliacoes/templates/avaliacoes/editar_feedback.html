@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Feedback</title>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Feedback para {{ disciplina.nome }}</h1>
+
+        <form method="POST" class="feedback-form">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <button type="submit" class="btn">Salvar Alterações</button>
+        </form>
+
+        <div class="btn-group">
+            <a href="{% url 'detalhes_disciplina' disciplina.id %}" class="btn">Voltar para Detalhes da Disciplina</a>
+            <a href="{% url 'home' %}" class="btn">Voltar para Home</a>
+        </div>
+    </div>
+</body>
+</html>

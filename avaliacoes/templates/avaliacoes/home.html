@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Início - Sistema de Feedback</title>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo ao Sistema de Feedback de Disciplinas</h1>
+        <p>Escolha uma das opções abaixo para navegar pelo sistema:</p>
+
+        <div class="btn-group">
+            <a href="{% url 'lista_disciplinas' %}" class="btn">Ver Disciplinas</a>
+            <a href="/admin/" class="btn">Acessar Admin</a>
+            <a href="{% url 'login' %}" class="btn">Login</a>
+            <a href="{% url 'logout' %}" class="btn">Logout</a>
+            <a href="{% url 'registro' %}" class="btn">Registrar-se</a>
+        </div>
+    </div>
+</body>
+</html>

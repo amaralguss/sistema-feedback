@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Disciplina</title>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ disciplina.nome }}</h1>
+        <p><strong>Descrição:</strong> {{ disciplina.descricao }}</p>
+        <h3><strong>Média das notas:</strong> {{ media }}</h3>
+
+        <h2>Feedbacks</h2>
+        {% if feedbacks %}
+            <ul class="feedback-list">
+                {% for feedback in feedbacks %}
+                    <li>
+                        <strong>{{ feedback.aluno.username }}</strong> — Nota: {{ feedback.nota }}<br>
+                        <em>{{ feedback.comentario }}</em>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Não há feedbacks para esta disciplina ainda.</p>
+        {% endif %}
+
+        <div class="btn-group">
+            {% if user.is_authenticated and not usuario_avaliou %}
+                <a href="{% url 'avaliar_disciplina' disciplina.id %}" class="btn">Avaliar esta disciplina</a>
+            {% elif user.is_authenticated %}
+                <p>Você já avaliou esta disciplina.</p>
+            {% else %}
+                <p><a href="{% url 'login' %}" class="btn">Faça login</a> para avaliar esta disciplina.</p>
+            {% endif %}
+        </div>
+
+        <div class="btn-group">
+            <a href="{% url 'lista_disciplinas' %}" class="btn">Voltar para Lista de Disciplinas</a>
+            <a href="{% url 'home' %}" class="btn">Voltar para Home</a>
+        </div>
+    </div>
+</body>
+</html>

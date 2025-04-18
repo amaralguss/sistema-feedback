@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+
+    <title>Lista de Disciplinas</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Disciplinas</h1>
+
+        <div class="disciplinas-list">
+            <ul>
+                {% for disciplina in disciplinas %}
+                    <li>
+                        <a href="{% url 'detalhes_disciplina' disciplina.id %}" class="btn-disciplina">{{ disciplina.nome }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <a href="{% url 'home' %}">
+            <button class="btn">Voltar para Home</button>
+        </a>
+    </div>
+</body>
+</html>
