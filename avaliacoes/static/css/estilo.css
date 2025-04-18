@@ -1,11 +1,11 @@
-/* Reset básico */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Fundo da página e fonte base */
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f2f4f8;
@@ -29,7 +29,7 @@ h1, h2, h3 {
     color: #2c3e50;
 }
 
-/* Formulários */
+
 form {
     display: flex;
     flex-direction: column;
@@ -48,7 +48,6 @@ select {
     width: 100%;
 }
 
-/* Botões */
 button, .btn {
     background-color: #007bff;
     color: white;
@@ -75,7 +74,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Lista de feedbacks */
+
 ul {
     list-style-type: none;
     padding-left: 0;
@@ -89,7 +88,7 @@ li {
     border: 1px solid #ddd;
 }
 
-/* Navegação de botões */
+
 .btn-group {
     display: flex;
     gap: 10px;
@@ -100,14 +99,14 @@ li {
     flex-direction: row;
 }
 
-/* Espaçamento extra para seções */
+
 .section {
     margin-bottom: 30px;
     padding-bottom: 10px;
     border-bottom: 1px solid #eee;
 }
 
-/* Alinhamento centralizado em formulários */
+
 form button {
     align-self: flex-start;
 }

@@ -22,7 +22,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'avaliacoes',  # Certifique-se de que o app "avaliacoes" está aqui
+    'avaliacoes', 
 ]
 
 MIDDLEWARE = [
